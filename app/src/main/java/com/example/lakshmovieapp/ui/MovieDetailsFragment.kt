@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
@@ -13,9 +14,9 @@ import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.example.lakshmovieapp.R
+import com.example.lakshmovieapp.adapter.GenresRVAdapter
 import com.example.lakshmovieapp.databinding.FragmentMovieDetailsBinding
 import com.example.lakshmovieapp.model.movieDetails.MovieDetails
-import com.example.lakshmovieapp.adapter.GenresRVAdapter
 import com.example.lakshmovieapp.utils.Constants
 import com.example.lakshmovieapp.utils.Helper
 import com.example.lakshmovieapp.utils.NetworkResult
@@ -105,11 +106,15 @@ class MovieDetailsFragment : Fragment() {
             txtMovieName.isSelected = true
             txtMovieName.text = movieDetails.title
             txtMovieYear.text = Helper.parseDateyyyy(movieDetails.release_date)
-            txtMovieRating.text = "${movieDetails.vote_average}/10"
             txtMovieDetails.text = movieDetails.overview
+            txtMovieRating.setText(
+                Helper.twoColorTextView(movieDetails.vote_average.toString(), "/10"),
+                TextView.BufferType.SPANNABLE
+            )
         }
 
     }
+
 
     override fun onDestroyView() {
         super.onDestroyView()
