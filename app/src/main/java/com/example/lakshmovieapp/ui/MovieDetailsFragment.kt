@@ -19,6 +19,7 @@ import com.example.lakshmovieapp.adapter.GenresRVAdapter
 import com.example.lakshmovieapp.utils.Constants
 import com.example.lakshmovieapp.utils.Helper
 import com.example.lakshmovieapp.utils.NetworkResult
+import com.example.lakshmovieapp.viewmodel.MovieViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 

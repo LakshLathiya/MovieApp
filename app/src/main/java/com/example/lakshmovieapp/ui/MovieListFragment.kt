@@ -1,7 +1,6 @@
 package com.example.lakshmovieapp.ui
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,11 +8,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
-import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.lakshmovieapp.databinding.FragmentMovieListBinding
 import com.example.lakshmovieapp.paging.LoaderAdapter
 import com.example.lakshmovieapp.paging.MoviePagingAdapter
+import com.example.lakshmovieapp.viewmodel.MovieViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 

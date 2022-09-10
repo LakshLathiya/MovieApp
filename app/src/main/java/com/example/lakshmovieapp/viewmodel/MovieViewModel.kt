@@ -1,4 +1,4 @@
-package com.example.lakshmovieapp.ui
+package com.example.lakshmovieapp.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

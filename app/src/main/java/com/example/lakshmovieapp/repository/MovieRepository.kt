@@ -22,7 +22,7 @@ class MovieRepository @Inject constructor(private val movieApi: MovieApi) {
         pagingSourceFactory = { MoviePagingSource(movieApi) }
     ).liveData
 
-    suspend fun getMovieDetails(movieId : Int) {
+    suspend fun getMovieDetails(movieId: Int) {
         _movieLiveData.postValue(NetworkResult.Loading())
         val response = movieApi.getMovieDetails(movieId)
         if (response.isSuccessful && response.body() != null) {
