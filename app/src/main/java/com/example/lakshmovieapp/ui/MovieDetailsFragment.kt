@@ -1,6 +1,7 @@
 package com.example.lakshmovieapp.ui
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -47,40 +48,48 @@ class MovieDetailsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        movieViewModel.getMovieDetails(args.movieId)
         initialize()
         bindObservers()
     }
 
     private fun initialize() {
+
+        getMovieDetails()
+
         (activity as AppCompatActivity?)!!.supportActionBar!!.show()
         (activity as AppCompatActivity?)!!.supportActionBar!!.title = "Details"
-        binding.rvGenres.layoutManager =
-            LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-        binding.rvGenres.setHasFixedSize(true)
-        binding.rvGenres.adapter = genresRVAdapter
+        binding.rvGenres.apply {
+            layoutManager =
+                LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+            setHasFixedSize(true)
+            adapter = genresRVAdapter
+        }
 
         binding.layoutError.btnRetry.setOnClickListener {
-            movieViewModel.getMovieDetails(args.movieId)
-            bindObservers()
+            getMovieDetails()
         }
+
     }
 
     private fun bindObservers() {
         movieViewModel.movieDetailsLiveData.observe(viewLifecycleOwner, Observer {
-            binding.shimmerViewContainer.apply {
-                stopShimmerAnimation()
-                isVisible = false
-            }
             when (it) {
                 is NetworkResult.Success -> {
+                    binding.shimmerViewContainer.apply {
+                        stopShimmerAnimation()
+                        isVisible = false
+                    }
                     binding.layoutError.root.visibility = View.GONE
                     bindValueToUI(it.data!!)
                 }
                 is NetworkResult.Error -> {
-                    binding.apply {
-                        layoutError.root.visibility = View.VISIBLE
-                        layoutError.txtError.text = it.message
+                    binding.shimmerViewContainer.apply {
+                        stopShimmerAnimation()
+                        isVisible = false
+                    }
+                    binding.layoutError.apply {
+                        root.visibility = View.VISIBLE
+                        txtError.text = it.message
                     }
                 }
                 is NetworkResult.Loading -> {
@@ -91,6 +100,18 @@ class MovieDetailsFragment : Fragment() {
                 }
             }
         })
+    }
+
+    private fun getMovieDetails() {
+        if (Helper.isNetworkAvailable(requireContext())) {
+            binding.layoutError.root.visibility = View.GONE
+            movieViewModel.getMovieDetails(args.movieId)
+        } else {
+            binding.apply {
+                layoutError.root.visibility = View.VISIBLE
+                layoutError.txtError.text = "Please check your Internet \n Please try again!"
+            }
+        }
     }
 
     private fun bindValueToUI(movieDetails: MovieDetails) {
