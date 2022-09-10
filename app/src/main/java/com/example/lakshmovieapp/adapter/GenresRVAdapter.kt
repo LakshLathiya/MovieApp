@@ -10,7 +10,7 @@ import javax.inject.Inject
 class GenresRVAdapter @Inject constructor() :
     RecyclerView.Adapter<GenresRVAdapter.MyViewHolder>() {
 
-    var _genre = mutableListOf<Genre>()
+    private var _genre = mutableListOf<Genre>()
     fun setGenresList(genre: Genre) {
         _genre.addAll(listOf(genre))
         notifyDataSetChanged()

@@ -15,7 +15,7 @@ class MoviePagingSource(private val movieAPI: MovieApi) : PagingSource<Int, Resu
             val position = params.key ?: 1
             val response = movieAPI.getMovies(position)
             return LoadResult.Page(
-                data = response.body()!!.results,
+                data = response.body()!!.results!!,
                 prevKey = if (position == 1) null else position - 1,
                 nextKey = if (position == response.body()!!.total_pages) null else position + 1
             )

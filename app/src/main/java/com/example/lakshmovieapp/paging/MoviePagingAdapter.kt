@@ -21,22 +21,25 @@ class MoviePagingAdapter @Inject constructor() :
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val item = getItem(position)
         if (item != null) {
-            Glide
-                .with(holder.itemView)
-                .load(Constants.IMG_BASE_URL + item.backdrop_path)
-                .placeholder(R.drawable.round_rectangle_10)
-                .centerCrop()
-                .into(holder.binding.imgMovie)
-            holder.binding.txtMovieName.isSelected = true
-            holder.binding.txtMovieName.text = item.title
-            holder.binding.txtMovieYear.text = Helper.parseDateyyyy(item.release_date)
-            holder.binding.txtMovieRating.text = "${item.vote_average}  "
-            holder.binding.root.setOnClickListener {
-                holder.binding.root.findNavController()
-                    .navigate(
-                        MovieListFragmentDirections.actionMovieListToMovieDetails(item.id)
-                    )
+            holder.binding.apply {
+                Glide
+                    .with(holder.itemView)
+                    .load(Constants.IMG_BASE_URL + item.backdrop_path)
+                    .placeholder(R.drawable.round_rectangle_10)
+                    .centerCrop()
+                    .into(imgMovie)
+                txtMovieName.isSelected = true
+                txtMovieName.text = item.title
+                txtMovieYear.text = Helper.parseDateyyyy(item.release_date)
+                txtMovieRating.text = "${item.vote_average}  "
+                root.setOnClickListener {
+                    root.findNavController()
+                        .navigate(
+                            MovieListFragmentDirections.actionMovieListToMovieDetails(item.id!!)
+                        )
+                }
             }
+
         }
     }
 

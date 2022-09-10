@@ -1,6 +1,6 @@
 package com.example.lakshmovieapp.model.movieDetails
 
 data class Genre(
-    val id: Int,
-    val name: String
+    val id: Int? = null,
+    val name: String? = null
 )

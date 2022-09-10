@@ -98,7 +98,7 @@ class MovieDetailsFragment : Fragment() {
                 .load(Constants.IMG_BASE_URL + movieDetails.poster_path)
                 .placeholder(R.drawable.round_rectangle_10)
                 .into(imgMovie)
-            for (i in movieDetails.genres) {
+            for (i in movieDetails.genres!!) {
                 genresRVAdapter.setGenresList(i)
             }
             txtMovieName.isSelected = true
