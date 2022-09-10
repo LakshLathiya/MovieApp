@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="@dimen/_10sdp"
+    android:background="@color/white"
+    android:paddingTop="@dimen/_10sdp">
+
+    <View
+        android:id="@+id/img_movie"
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_100sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:background="@drawable/round_rectangle_10"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/txt_movie_name"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_10sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:paddingHorizontal="@dimen/_10sdp"
+        app:layout_constraintBottom_toTopOf="@+id/txt_movie_year"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/round_rectangle_4"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/img_movie"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/txt_movie_year"
+        android:layout_width="@dimen/_80sdp"
+        android:layout_height="@dimen/_10sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:background="@drawable/round_rectangle_4"
+        android:paddingHorizontal="@dimen/_10sdp"
+        app:layout_constraintBottom_toTopOf="@+id/txt_movie_rating"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/img_movie"
+        app:layout_constraintTop_toBottomOf="@+id/txt_movie_name" />
+
+    <View
+        android:id="@+id/txt_movie_rating"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_10sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:paddingHorizontal="@dimen/_10sdp"
+        android:background="@drawable/round_rectangle_4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/img_movie"
+        app:layout_constraintTop_toBottomOf="@+id/txt_movie_year" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

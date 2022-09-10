@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/laksh/AndroidStudioProjects/LakshMovieApp/app/src/main/res/drawable/round_rectangle_10.xml" value="0.165" />
+        <entry key="..\:/Users/laksh/AndroidStudioProjects/LakshMovieApp/app/src/main/res/drawable/round_rectangle_2.xml" value="0.165" />
+        <entry key="..\:/Users/laksh/AndroidStudioProjects/LakshMovieApp/app/src/main/res/drawable/round_rectangle_20.xml" value="0.165" />
+        <entry key="..\:/Users/laksh/AndroidStudioProjects/LakshMovieApp/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/laksh/AndroidStudioProjects/LakshMovieApp/app/src/main/res/layout/fragment_movie_details.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/laksh/AndroidStudioProjects/LakshMovieApp/app/src/main/res/layout/fragment_movie_list.xml" value="0.21164021164021163" />
+        <entry key="..\:/Users/laksh/AndroidStudioProjects/LakshMovieApp/app/src/main/res/layout/item_loading.xml" value="0.24615384615384617" />
+        <entry key="..\:/Users/laksh/AndroidStudioProjects/LakshMovieApp/app/src/main/res/layout/item_rv_genres.xml" value="0.25" />
+        <entry key="..\:/Users/laksh/AndroidStudioProjects/LakshMovieApp/app/src/main/res/layout/item_rv_movies.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/laksh/AndroidStudioProjects/LakshMovieApp/app/src/main/res/layout/layout_data_placeholder.xml" value="0.25" />
+        <entry key="..\:/Users/laksh/AndroidStudioProjects/LakshMovieApp/app/src/main/res/layout/layout_error.xml" value="0.25" />
+        <entry key="..\:/Users/laksh/AndroidStudioProjects/LakshMovieApp/app/src/main/res/layout/layout_shimmer_detail.xml" value="0.2" />
+        <entry key="..\:/Users/laksh/AndroidStudioProjects/LakshMovieApp/app/src/main/res/layout/layout_shimmer_rv.xml" value="0.25" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
