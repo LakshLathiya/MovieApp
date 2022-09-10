@@ -13,7 +13,7 @@ interface MovieApi {
     suspend fun getMovies(
         @Query("page") page: Int,
         @Query("api_key") appId: String = Constants.API_KEY
-    ): Response<Movies>
+    ): Movies
 
     @GET("movie/{id}")
     suspend fun getMovieDetails(
