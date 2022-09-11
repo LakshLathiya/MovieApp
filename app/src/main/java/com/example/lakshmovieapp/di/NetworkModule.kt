@@ -31,9 +31,6 @@ class NetworkModule {
     @Provides
     fun providesOkHttpClient(httpLoggingInterceptor: HttpLoggingInterceptor): OkHttpClient {
         return OkHttpClient.Builder()
-            .connectTimeout(5, TimeUnit.MINUTES)
-            .writeTimeout(5, TimeUnit.MINUTES) // write timeout
-            .readTimeout(5, TimeUnit.MINUTES) // read timeout
             .addInterceptor(httpLoggingInterceptor)
             .build()
     }
