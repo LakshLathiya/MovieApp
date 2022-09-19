@@ -34,6 +34,5 @@ class MovieRepository @Inject constructor(private val movieApi: MovieApi) {
             _movieLiveData.postValue(NetworkResult.Error("Something Went Wrong"))
         }
     }
-
 }
 
