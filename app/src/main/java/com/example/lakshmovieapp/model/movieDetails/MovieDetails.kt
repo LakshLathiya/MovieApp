@@ -6,5 +6,6 @@ data class MovieDetails(
     val poster_path: String? = null,
     val release_date: String? = null,
     val title: String? = null,
+    val id: Int? = null,
     val vote_average: Double? = null,
 )
